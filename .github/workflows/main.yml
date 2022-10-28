@@ -26,7 +26,7 @@ jobs:
     - name: Check out Repo
       uses: actions/checkout@v3
     - name: List contents of current directory
-      run: ls -al
+      run: chmod +x bash.sh
     - name: Run a python script
       run: python script.py
 
@@ -37,7 +37,6 @@ jobs:
   variable_job: 
     env: 
       SECRET_TEXT: ${{ secrets.SUPER_SECRET_TEXT }}
-    # - SECRET_TEXT: ${{secrets.SUPER_SECRET_TEXT}}
     runs-on: ubuntu-latest
     steps:
     - name: Print global variable
